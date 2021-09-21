@@ -115,27 +115,6 @@ y = 3*x**3-2*x**2+3*x-1
 print("When x = 0")
 print("y =", y, "\n")
 
-#Using the second value of 1
-x =  1
-x = float(x)
-
-# Code which would calculate the value of y as derived from the algebraic expression, " 3x^3 - 2x^2 + 3x - 1"
-y = 3*x**3-2*x**2+3*x-1
-
-# Printing the result of y
-print("When x = 1")
-print("y =", y, "\n")
-
-#Using the third value of -1
-x = -1
-x = float(x)
-
-# Code which would calculate the value of y as derived from the algebraic expression, " 3x^3 - 2x^2 + 3x - 1"
-y = 3*x**3-2*x**2+3*x-1
-
-# Printing the result of y
-print("When x = -1")
-print("y =", y, "\n")
 
 # Chapter 2 Lab 8 - Comments
 # This program computes the number of seconds in a given number of hours
