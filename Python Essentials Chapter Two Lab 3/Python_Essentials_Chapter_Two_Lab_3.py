@@ -169,3 +169,27 @@ y = 1/(x+1/(x+1/(x+(1/x))))
 
 # This will output the value of y calculated from above expression
 print("y =", y, "\n")
+
+
+# Chapter 2.6.1.11 Operators and expressions -20210921
+# This lab is about creating a simple code which will evaluate the end time of a period of time
+
+# The following codes will ask the user to enter starting time in pairs of hours and minutes
+# It will also ask the user to input the event duration in minutes
+hour = int(input("Starting time (hours): ")) # Hours of Start time, eg: 12 for 12:40 Start time
+mins = int(input("Starting time (minutes): ")) # Minutes of Start time, eg: 40 for 12:40 Start time
+dura = int(input("Event duration (minutes) ")) # This will input the duration of event in minutes
+
+# To calcuate the end time, firstly total minutes is calculated adding hours, minutes and duration
+total_minutes = hour * 60 + mins + dura
+
+# Total minutes is divided by 60 to get hour of end time pair
+# int() function is used to get integer value for hour of end time pair
+# Modulo operator %24 is used to divide the integer end_hour so that we don't get values above 24 
+end_hour = int(total_minutes / 60) % 24 # As there is only 24 hours in a day, therefore, %24
+
+# Remainder of total minutes divided by 60 is end_minutes
+end_minutes = total_minutes % 60 # The modulo of 60 as there are 60 minutes in an hour
+
+# Print function to output the endtime and use of 'sep' keyword argument to separate output by ':'
+print("\nThe end time is", end_hour, end_minutes, sep=":")
