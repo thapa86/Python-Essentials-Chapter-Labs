@@ -121,7 +121,7 @@ x =  1
 x = float(x)
 
 # Code which would calculate the value of y as derived from the algebraic expression, " 3x^3 - 2x^2 + 3x - 1"
-#y = 3*x**3-2*x**2+3*x-1
+y = 3*x**3-2*x**2+3*x-1
 
 # Printing the result of y
 print("When x = 1")
@@ -132,7 +132,7 @@ x = -1
 x = float(x)
 
 # Code which would calculate the value of y as derived from the algebraic expression, " 3x^3 - 2x^2 + 3x - 1"
-#y = 3*x**3-2*x**2+3*x-1
+y = 3*x**3-2*x**2+3*x-1
 
 # Printing the result of y
 print("When x = -1")
@@ -152,6 +152,6 @@ print("Hours: ", number_of_hours)
 print("Seconds in Hours: ", number_of_hours * seconds_in_1hour) 
 
 # Printing "Goodbye"
-print("Goodbye")
+print("Goodbye \n")
 
 # This is the end of the program that computes the number of seconds in 2 hour
