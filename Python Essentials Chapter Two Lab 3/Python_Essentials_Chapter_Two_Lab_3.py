@@ -1,3 +1,4 @@
+# Anil Thapa - Chapter 2 Labs -20210921
 
 #Chapter 2 Lab 1 - The print() function
 # Using the print() function to print the line "Hello, Python!" and "Anil"
@@ -8,7 +9,6 @@ print("Anil \n")
 # Using sep and end keyword arguments to achieve the expected output
 print("Programming","Essentials","in", sep="***", end="...")
 print("Python \n")
-
 
 # Chapter 2 Lab 3 - Formatting the output 
 # Minimizing the number of print() function invocations by inserting the \n sequence into the strings
@@ -24,7 +24,6 @@ print("***   ***")
 print("  *   *")
 print("  *   *")
 print("  *****\n")
-
 
 # Making the arrow twice as large but keeping the proportions
 print("Doubled Arrow")
