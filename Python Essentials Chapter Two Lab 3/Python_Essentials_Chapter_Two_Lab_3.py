@@ -1,16 +1,16 @@
 # Anil Thapa - Chapter 2 Labs -20210921
 
-#Chapter 2 Lab 1 - The print() function
+#Chapter 2.1.1.6 - The print() function - 20210921
 # Using the print() function to print the line "Hello, Python!" and "Anil"
 print("Hello, Python!")
 print("Anil \n")
 
-# Chapter 2 Lab 2 - The print() function using separator and end keywords
+# Chapter 2.1.1.18 - The print() function using separator and end keywords
 # Using sep and end keyword arguments to achieve the expected output
 print("Programming","Essentials","in", sep="***", end="...")
 print("Python \n")
 
-# Chapter 2 Lab 3 - Formatting the output 
+# Chapter 2.1.1.19 - Formatting the output 
 # Minimizing the number of print() function invocations by inserting the \n sequence into the strings
 print("    *\n   * *\n  *   *\n *     *\n***   ***\n  *   *\n  *   *\n  *****\n")
 
@@ -61,11 +61,11 @@ print("    *       *     " * 2)
 print("    *       *     " * 2)
 print("    *********     " * 2, "\n")
 
-# Chapter 2 Lab 4 - Python literals - Strings
+# Chapter 2.2.1.11 - Python literals - Strings
 # Writing a one-line piece of code using the print() function as well as the newline and escape characters
 print("I'm\" \n\"\"learning\"\" \n\"\"\"Python\"\"\"\n")
 
-# Chapter 2 Lab 5 - Variables
+# Chapter 2.4.1.7
 # Creating the variables and assigning values to each variables
 john = 3
 mary = 5
@@ -90,7 +90,8 @@ total_apples = john*mary/adam+john-mary//adam
 print("Experiment of code")
 print("Total number of apples:", total_apples,"\n")
 
-# Chapter 2 Lab 6 - A simple Converter
+
+# Chapter 2.4.1.9 - Variables: A simple Converter
 # Defining the variables and assigning values to them
 kilometers = 12.25
 miles = 7.38
@@ -103,7 +104,7 @@ kilometers_to_miles = kilometers/1.6
 print(miles, "miles is", round(miles_to_kilometers, 2), "kilometers")
 print(kilometers, "kilometers is", round(kilometers_to_miles, 2), "miles","\n")
 
-# Chapter 2 Lab 7 Operators and Expressions
+# Chapter 2.4.1.10 Operators and Expressions
 #Using the first value of 0
 x =  0
 x = float(x)
@@ -116,7 +117,7 @@ print("When x = 0")
 print("y =", y, "\n")
 
 
-# Chapter 2 Lab 8 - Comments
+# Chapter 2.5.1.2 - Comments
 # This program computes the number of seconds in a given number of hours
 
 # Defining the variables and assigning values to them
@@ -237,33 +238,41 @@ if income < 85528:
 if income > 85528:
     tax = 14839.2 + (32/100) * (income - 85528) # tax will be calculated using this expression if income is greater than 85528
 
+# If statement which will compare if the tax calculated is greater than 0
+if tax > 0:
     tax = round(tax, 0) # Use of round(0) function to round the tax amount to 0 decimal places
-
     print("The tax is:", tax, "thalers") # Outputs the result with tax value rounded from previous line
 
-# If statement which will display tax of 0.0 thalers for any tax calculated less than zero
-if tax < 0:
+# If tax is less than 0, it means no tax at all and will output the following
+else:
     print("The tax is: 0.0 thalers")
 
 
 # Chapter 3.1.1.12 Essentials of the if-elif-else statement - 20210921
 # This will identify whether the year entered as input is leap year or common year
 
-year = int(input("Enter a year: "))
+year = int(input("\nEnter a year: ")) # int() function which will convert input string to integer
 
-if year % 4 != 0:
-    print("Common year")
+# Compares if the entered year is greater than or equal to 1582
+# If within Gregorian calendar period, the following conditions will be executed
+if year >= 1582:
+    if year % 4 != 0: # modulus of 4 if returns 0 means exactly divisible by 4
+        print("Common year")
 
-elif year % 100 !=0:
-    print("Leap year")
+    elif year % 100 != 0: # modulus of 100 if returns 0 means exactly divisible by 100
+        print("Leap year")
 
-elif year % 400 !=0:
-    print("Common year")
+    elif year % 400 != 0: # modulus of 400 if returns 0 means exactly divisible by 400
+        print("Common year")
 
-elif year < 1582:
+# else statement for all other years which do not meet conditions above will be leap year
+    else:
+        print("Leap year")
+
+# if statement for year before the introduction of the Gregorian calendar period
+if year < 1582:
     print("Not within the Gregorian calendar period")
 
-else:
-    print("Leap year")
+
 
 
