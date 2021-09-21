@@ -149,7 +149,7 @@ seconds_in_1hour = 3600
 print("Hours: ", number_of_hours) 
 
 # Printing the number of seconds in a given number of hours
-print("Seconds in Hours: ", number_of_hours * seconds_in_1hour) 
+print("Seconds in Hours: ", number_of_hours * seconds_in_1hour, "\n") 
 
 # Printing "Goodbye"
 print("Goodbye \n")
