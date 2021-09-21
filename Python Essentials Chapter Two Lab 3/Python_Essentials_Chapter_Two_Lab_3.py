@@ -193,3 +193,77 @@ end_minutes = total_minutes % 60 # The modulo of 60 as there are 60 minutes in a
 
 # Print function to output the endtime and use of 'sep' keyword argument to separate output by ':'
 print("\nThe end time is", end_hour, end_minutes, sep=":")
+
+# Chapter 3.1.1.4 Questions and Answers - 20210921
+# This lab is about using one of the comparison operators which takes n parameter as input and compares it to 100
+
+n = int(input("\nEnter a number here: ")) # Will prompt user to enter a value which will be stored as integer
+
+# Compare the value of n and will output 'False' if less than 100 but 'True' if equal to or greater than 100
+print(n >= 100)
+
+
+# Chapter 3.1.1.10 Comparison operators and conditional execution - 20210921
+# This lab is about writing a program using conditional execution
+# It outputs "Spathiphyllum is the best plant ever!" if input matches the string "Spathiphyllum"
+
+# This line will take the name of plant entered by user as string and store it under the variable 'name_of_plants'
+name_of_plants = input("\nEnter plant name here: ")
+
+# Checks if the input is equal to "Spathiphyllum" with upper case
+if name_of_plants == "Spathiphyllum":
+    print("Yes - Spathiphyllum is the best plant ever!\n") # Print the output if it matches "Spathiphyllum"
+
+# Checks if the input is equal to "spathiphyllum" with lower case
+if name_of_plants == "spathiphyllum":
+    print("No, I want a big Spathiphyllum!\n") # Print the output if it matches "spathiphyllum"
+
+# Else statement which will compare if input matches either of two above
+# If not matched, it will output the message below with the input string
+else:
+    print("Spathiphyllum! Not "+ name_of_plants +"!\n")
+
+
+# Chapter 3.1.1.11 Essentials of the if-else statement - 20210921
+# This lab is about creating a tax calculator for income more or less than 85,528 Thalers
+
+income = float(input("Enter the annual income: ")) # It will prompt user to enter their income and float value is stored
+
+# If statement which will compare if the income is less than 85528
+if income < 85528:
+    tax = (18/100 * income) - 556.2 # tax will be calculated using this expression if income is less than 85528
+
+# If statement which will compare if the income is greater than 85528
+if income > 85528:
+    tax = 14839.2 + (32/100) * (income - 85528) # tax will be calculated using this expression if income is greater than 85528
+
+    tax = round(tax, 0) # Use of round(0) function to round the tax amount to 0 decimal places
+
+    print("The tax is:", tax, "thalers") # Outputs the result with tax value rounded from previous line
+
+# If statement which will display tax of 0.0 thalers for any tax calculated less than zero
+if tax < 0:
+    print("The tax is: 0.0 thalers")
+
+
+# Chapter 3.1.1.12 Essentials of the if-elif-else statement - 20210921
+# This will identify whether the year entered as input is leap year or common year
+
+year = int(input("Enter a year: "))
+
+if year % 4 != 0:
+    print("Common year")
+
+elif year % 100 !=0:
+    print("Leap year")
+
+elif year % 400 !=0:
+    print("Common year")
+
+elif year < 1582:
+    print("Not within the Gregorian calendar period")
+
+else:
+    print("Leap year")
+
+
