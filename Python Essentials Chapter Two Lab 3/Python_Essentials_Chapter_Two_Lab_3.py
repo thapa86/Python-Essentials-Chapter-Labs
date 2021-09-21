@@ -109,7 +109,7 @@ x =  0
 x = float(x)
 
 # Code which would calculate the value of y as derived from the algebraic expression, " 3x^3 - 2x^2 + 3x - 1"
-y = 3*x**3-2*x**2+3*x-1
+y = (3*x**3)-(2*x**2)+(3*x-1)
 
 # Printing the result of y
 print("When x = 0")
@@ -133,3 +133,39 @@ print("Seconds in Hours: ", number_of_hours * seconds_in_1hour, "\n")
 print("Goodbye \n")
 
 # This is the end of the program that computes the number of seconds in 2 hour
+
+
+# Chapter 2.6.1.9 Simple input and output-20210921
+# The task of this lab is to complete the code to evalaure four basic arithmetic operations of two variables 'a' and 'b' as per the user input
+
+a = float(input("Enter your first value here: ")) # This allows user to input a value for 'a' which will be converted to float value
+b = float(input("Enter your second value here: ")) # This allows user to input a value for 'b' which will be converted to float value
+
+# This function will output the result of addition of 'a' and 'b'
+# Use of "\n" will print the outputs in new line
+print("\nThe addition of a and b is", a+b)
+
+# This function will output the result of substraction of 'a' and 'b'
+print("\nThe substraction of a and b is", a-b)
+
+# This function will output the result of multiplication of 'a' and 'b'
+print("\nThe multiplication of a and b is", a*b)
+
+# This function will output the result of division of 'a' and 'b'
+print("\nThe division of a and b is", a/b)
+
+# This will print the message "That's all, folks!"
+print("\nThat's all, folks! \n")
+
+
+# Chapter 2.6.1.10 Operators and Expressions-20210921
+# This lab is to complete the code to evaluate the expression given
+
+# This will allow user to input value for 'x' and the value will be converted to float value
+x = float(input("Enter value for x: "))
+
+# The value of 'y' is calculted using the following expression
+y = 1/(x+1/(x+1/(x+(1/x))))
+
+# This will output the value of y calculated from above expression
+print("y =", y, "\n")
