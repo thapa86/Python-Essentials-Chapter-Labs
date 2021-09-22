@@ -195,34 +195,7 @@ end_minutes = total_minutes % 60 # The modulo of 60 as there are 60 minutes in a
 # Print function to output the endtime and use of 'sep' keyword argument to separate output by ':'
 print("\nThe end time is", end_hour, end_minutes, sep=":")
 
-# Chapter 3.1.1.4 Questions and Answers - 20210921
-# This lab is about using one of the comparison operators which takes n parameter as input and compares it to 100
 
-n = int(input("\nEnter a number here: ")) # Will prompt user to enter a value which will be stored as integer
-
-# Compare the value of n and will output 'False' if less than 100 but 'True' if equal to or greater than 100
-print(n >= 100)
-
-
-# Chapter 3.1.1.10 Comparison operators and conditional execution - 20210921
-# This lab is about writing a program using conditional execution
-# It outputs "Spathiphyllum is the best plant ever!" if input matches the string "Spathiphyllum"
-
-# This line will take the name of plant entered by user as string and store it under the variable 'name_of_plants'
-name_of_plants = input("\nEnter plant name here: ")
-
-# Checks if the input is equal to "Spathiphyllum" with upper case
-if name_of_plants == "Spathiphyllum":
-    print("Yes - Spathiphyllum is the best plant ever!\n") # Print the output if it matches "Spathiphyllum"
-
-# Checks if the input is equal to "spathiphyllum" with lower case
-if name_of_plants == "spathiphyllum":
-    print("No, I want a big Spathiphyllum!\n") # Print the output if it matches "spathiphyllum"
-
-# Else statement which will compare if input matches either of two above
-# If not matched, it will output the message below with the input string
-else:
-    print("Spathiphyllum! Not "+ name_of_plants +"!\n")
 
 
 
