@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e7e6d74b-3a4e-4fb3-9e0c-abf4c05744c3</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>Python_Essentials_Chapter_Two_Lab_3.py</StartupFile>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>Chapter3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Python Essentials Chapter Two Lab 3</Name>
+    <Name>Python Essentials Chapter Labs</Name>
     <RootNamespace>Python Essentials Chapter Two Lab 3</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -24,7 +25,13 @@
     <Compile Include="Chapter Two working codes.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Python_Essentials_Chapter_Two_Lab_3.py" />
+    <Compile Include="Chapter2.py" />
+    <Compile Include="Chapter3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Chapter4.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
