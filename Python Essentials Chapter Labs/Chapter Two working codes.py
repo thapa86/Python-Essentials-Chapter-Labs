@@ -143,3 +143,138 @@ while number != -1:
 
 # Print the largest number.
 print("The largest number is:", largest_number)
+
+# A program that reads a sequence of numbers
+# and counts how many numbers are even and how many are odd.
+# The program terminates when zero is entered.
+
+odd_numbers = 0
+even_numbers = 0
+
+# Read the first number.
+number = int(input("Enter a number or type 0 to stop: "))
+
+# 0 terminates execution.
+while number != 0:
+    # Check if the number is odd.
+    if number % 2 == 1:
+        # Increase the odd_numbers counter.
+        odd_numbers += 1
+    else:
+        # Increase the even_numbers counter.
+        even_numbers += 1
+    # Read the next number.
+    number = int(input("Enter a number or type 0 to stop: "))
+
+# Print results.
+print("Odd numbers count:", odd_numbers)
+print("Even numbers count:", even_numbers)
+
+# Counter loops
+counter = 5
+while counter != 0:
+    print("Inside the loop.", counter)
+    counter -= 1
+print("Outside the loop.", counter)
+
+#Second option
+counter = 5
+while counter:
+    print("Inside the loop.", counter)
+    counter -= 1
+print("Outside the loop.", counter)
+
+#FOR loops
+
+for i in range(10):
+    print("The value of i is currently", i)
+
+for i in range(2, 8):
+    print("The value of i is currently", i)
+
+#Power of three
+power = 1
+for expo in range(16):
+    print("3 to the power of", expo, "is", power)
+    power *= 3
+
+# break - example
+
+print("The break instruction:")
+for i in range(1, 6):
+    if i == 3:
+        break
+    print("Inside the loop.", i)
+print("Outside the loop.")
+
+
+# continue - example
+
+print("\nThe continue instruction:")
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print("Inside the loop.", i)
+print("Outside the loop.")
+
+# The break and continue statements
+
+largest_number = -99999999
+counter = 0
+
+while True:
+    number = int(input("Enter a number or type -1 to end program: "))
+    if number == -1:
+        break
+    counter += 1
+    if number > largest_number:
+        largest_number = number
+
+if counter != 0:
+    print("The largest number is", largest_number)
+else:
+    print("You haven't entered any number.")
+
+#blocks = int(input("Enter the number of blocks: "))
+
+#
+# Write your code here.
+#	
+
+#print("The height of the pyramid:", height)
+blocks = int(input("Enter the number of blocks: "))
+counter = 1
+layer = 1
+
+remaining_blocks = blocks - layer
+
+while remaining_blocks != 0:
+    remaining_blocks = blocks-layer
+    layer +=1
+    counter+=1
+    #print(remaining_blocks)
+    print(counter)
+# Write your code here.
+
+blocks = int(input("Enter the number of blocks: "))
+height = 0
+layer = 1
+remaining_blocks = blocks - layer
+
+while blocks != 0:
+    remaining_blocks = blocks-layer
+    print(remaining_blocks)
+    
+    layer +=1
+    continue
+    if remaining_blocks !=0:
+        remaining_blocks = blocks-layer
+        layer +=1
+        continue
+    print(remaining_blocks)
+    #counter+=1
+    #print(remaining_blocks)
+#	
+
+#print("The height of the pyramid:", height)
+
