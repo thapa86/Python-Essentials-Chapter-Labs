@@ -232,7 +232,7 @@ income = float(input("Enter the annual income: ")) # It will prompt user to ente
 
 # If statement which will compare if the income is less than 85528
 if income < 85528:
-    tax = (18/100 * income) - 556.2 # tax will be calculated using this expression if income is less than 85528
+    tax = (18/100 * income) - 556.02 # tax will be calculated using this expression if income is less than 85528
 
 # If statement which will compare if the income is greater than 85528
 if income > 85528:
