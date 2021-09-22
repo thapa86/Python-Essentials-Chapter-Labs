@@ -256,13 +256,13 @@ year = int(input("\nEnter a year: ")) # int() function which will convert input 
 # Compares if the entered year is greater than or equal to 1582
 # If within Gregorian calendar period, the following conditions will be executed
 if year >= 1582:
-    if year % 4 != 0: # modulus of 4 if returns 0 means exactly divisible by 4
+    if (year % 4) != 0: # modulus of 4 if returns 0 means exactly divisible by 4
         print("Common year")
 
-    elif year % 100 != 0: # modulus of 100 if returns 0 means exactly divisible by 100
+    elif (year % 100) != 0: # modulus of 100 if returns 0 means exactly divisible by 100
         print("Leap year")
 
-    elif year % 400 != 0: # modulus of 400 if returns 0 means exactly divisible by 400
+    elif (year % 400) != 0: # modulus of 400 if returns 0 means exactly divisible by 400
         print("Common year")
 
 # else statement for all other years which do not meet conditions above will be leap year
