@@ -295,7 +295,7 @@ print("\nStep 5:", beatles) # Output the current list in beatles
 print("\nThe Fab", len(beatles))
 
 
-# Chapter 3.6.1.9 Operating with lists -basics
+# Chapter 3.6.1.9 Operating with lists -basics - 20210923
 # This lab is about removing all the repetitions from the list and create a new list with unique values
 
 #Simple list of integers with some repeated values
