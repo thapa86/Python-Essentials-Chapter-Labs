@@ -14,7 +14,7 @@ print(n >= 100)
 # It outputs "Spathiphyllum is the best plant ever!" if input matches the string "Spathiphyllum"
 
 # This line will take the name of plant entered by user as string and store it under the variable 'name_of_plants'
-name_of_plants = input("\nEnter plant name here: ")
+name_of_plants = input("\n\nEnter plant name here: ")
 
 # Checks if the input is equal to "Spathiphyllum" with upper case
 if name_of_plants == "Spathiphyllum":
@@ -27,7 +27,7 @@ if name_of_plants == "spathiphyllum":
 # Else statement which will compare if input matches either of two above
 # If not matched, it will output the message below with the input string
 else:
-    print("Spathiphyllum! Not "+ name_of_plants +"!\n")
+    print("Spathiphyllum! Not "+ name_of_plants +"!\n\n")
 
 
 # Chapter 3.1.1.11 Essentials of the if-else statement - 20210921
@@ -56,7 +56,7 @@ else:
 # Chapter 3.1.1.12 Essentials of the if-elif-else statement - 20210921
 # This will identify whether the year entered as input is leap year or common year
 
-year = int(input("\nEnter a year: ")) # int() function which will convert input string to integer
+year = int(input("\n\nEnter a year: ")) # int() function which will convert input string to integer
 
 # Compares if the entered year is greater than or equal to 1582
 # If within Gregorian calendar period, the following conditions will be executed
@@ -109,7 +109,7 @@ while entered_number != secret_number:
     if entered_number == secret_number:
         print(entered_number)
 
-print("Well done, muggle! You are free now.\n")
+print("Well done, muggle! You are free now.\n\n")
 
 
 # Chapter 3.2.1.6 Essentails of the for loop -counting mississippily - 20210922
@@ -135,7 +135,7 @@ print("\nReady or not, here I come!")
 secret_exit_word = "chupacabra" # Secret exit word stored in variable named secret_exit_word
 
 # Prompt user to enter the guessed secret word to exit the loop
-entered_word = input("\nPlease enter the secret word to exit this loop: ")
+entered_word = input("\n\nPlease enter the secret word to exit this loop: ")
 
 # While loop which will keep on prompting the user until the secret word is entered
 while entered_word != secret_exit_word:
@@ -152,7 +152,7 @@ print("\nYou've successfully left the loop")
 # Chapter 3.2.1.10 The continue statement - The Ugly Vowel Eater - 20210922
 # This lab is about creating a vowel eater which removes vowels from user word and display without vowel
 
-user_word = input("\nPlease enter your word here: ") # Prompt user to enter the word and store the word as strings in user_word variable
+user_word = input("\n\nPlease enter your word here: ") # Prompt user to enter the word and store the word as strings in user_word variable
 
 user_word = user_word.upper() # Converts the user to to upper case
 
@@ -178,7 +178,7 @@ for letter in user_word:
 
 word_without_vowels = ""
 
-user_word = input("\nPlease enter your word here: ") # Prompt user to enter the word and store the word as strings in user_word variable
+user_word = input("\n\nPlease enter your word here: ") # Prompt user to enter the word and store the word as strings in user_word variable
 
 user_word = user_word.upper() # Converts the user to to upper case
 
@@ -199,7 +199,7 @@ for letter in user_word:
     else:
         word_without_vowels += letter # This will concatenate the letter string from each iteration of the loop
 
-print(word_without_vowels,"\n") # will output the letters stripping all vowels from user_word
+print(word_without_vowels,"\n\n") # will output the letters stripping all vowels from user_word
 
 
 # Chapter 3.2.1.14 Essentails of the while loop-20210922
@@ -224,7 +224,7 @@ print("The height of the pyramid:", height)
 # Chapter 3.2.1.15 Collatz's hypothesis-20210922
 # This lab is about creating a program which would test Collatz's hypothesis
 
-c0 = int(input("\nEnter any non-negative and non-zero integer number: ")) # Prompt user to enter any non-negative and non-zero integer number
+c0 = int(input("\n\nEnter any non-negative and non-zero integer number: ")) # Prompt user to enter any non-negative and non-zero integer number
 
 # Count the steps needed to achieve the goal
 step = 0
@@ -250,12 +250,13 @@ else:
 hat = [1,2,3,4,5] # this is a list of 5 numbers
 
 # Step 1: Prompt the user to enter an integer and store it in the middle index
-hat[2] = int(input("\nEnter an integer here: ")) # index 2 in a list of 5 indices represent the middle number
+hat[2] = int(input("\n\nEnter an integer here: ")) # index 2 in a list of 5 indices represent the middle number
 
 # Step 2: Remove the last element from the list
 del hat[-1] # 'del' instruction removes the specified element from the list. '-1' index represents last number in the list
 
 # Step 3: Print the length of the existing list
+print(hat)
 print("\nThe length of the existing list is: ", len(hat))
 
 
@@ -264,7 +265,7 @@ print("\nThe length of the existing list is: ", len(hat))
 
 #step 1: create an empty list named beatles;
 beatles =[]
-print("\nStep 1:", beatles) # Output the current list in beatles
+print("\n\nStep 1:", beatles) # Output the current list in beatles
 
 #step 2: use the append() method to add the following members of the band to the list: John Lennon, Paul McCartney, and George Harrison;
 beatles.append("John Lennon")
@@ -272,9 +273,9 @@ beatles.append("Paul McCartney")
 beatles.append("George Harrison")
 
 print("\nStep 2:", beatles) # Output the current list in beatles 
-
+num = int(input("Enter how many new members do you want to add: "))
 #step 3: use the for loop and the append() method to prompt the user to add the following members of the band to the list: Stu Sutcliffe, and Pete Best;
-for i in range(len(beatles)-1):
+for i in range(num):
     beatles.append(input("\nEnter the new members of the band: "))
     
 print("\nStep 3:", beatles)  # Output the current list in beatles
@@ -292,3 +293,21 @@ print("\nStep 5:", beatles) # Output the current list in beatles
 
 # Testing the list length
 print("\nThe Fab", len(beatles))
+
+
+# Chapter 3.6.1.9 Operating with lists -basics
+# This lab is about removing all the repetitions from the list and create a new list with unique values
+
+#Simple list of integers with some repeated values
+simple_list = [1,2,3,3,4,6,7,7,7,8,9]
+unique_list = [] # To store the unique numbers during iterations of for loop
+
+# For loop will continue until the length of simple_list which is 11, ie i = 0 to 10
+for i in range(len(simple_list)):
+    if simple_list[i] not in unique_list: # This ensures that the element from simple_list is not already present in the unique_list
+        unique_list.append(simple_list[i]) # Add the unique number from simple_list to the unique_list
+
+# Print the unique_list with unique numbers in it without any repetitions
+print("\n\nThe list with unique elements only:")
+print(unique_list) 
+
