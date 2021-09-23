@@ -224,7 +224,9 @@ print("The height of the pyramid:", height)
 # Chapter 3.2.1.15 Collatz's hypothesis-20210922
 # This lab is about creating a program which would test Collatz's hypothesis
 
-c0 = int(input("Enter any non-negative and non-zero integer number: ")) # Prompt user to enter any non-negative and non-zero integer number
+c0 = int(input("\nEnter any non-negative and non-zero integer number: ")) # Prompt user to enter any non-negative and non-zero integer number
+
+# Count the steps needed to achieve the goal
 step = 0
 
 # While loop which will execute if value of 'c0' is not equal to 1
@@ -238,5 +240,55 @@ while c0 !=1:
     print(int(c0)) # Print the intermediate values of c0. int() functions converts the float value to integer
     
 else:
-    print("steps =", step) # Prints the number of steps taken to achieve the goal
+    print("\nsteps =", step) # Prints the number of steps taken to achieve the goal
 
+
+# Chapter 3.4.1.6 The basics of lists - 20210923
+# This lab is about creating and modifying lists
+
+# Hat contained a list of five numbers: 1, 2,3, 4 and 5
+hat = [1,2,3,4,5] # this is a list of 5 numbers
+
+# Step 1: Prompt the user to enter an integer and store it in the middle index
+hat[2] = int(input("\nEnter an integer here: ")) # index 2 in a list of 5 indices represent the middle number
+
+# Step 2: Remove the last element from the list
+del hat[-1] # 'del' instruction removes the specified element from the list. '-1' index represents last number in the list
+
+# Step 3: Print the length of the existing list
+print("\nThe length of the existing list is: ", len(hat))
+
+
+# Chapter 3.4.1.13 The basics of lists - the Beatles- 20210923
+#Write a program that reflects these changes and lets you practice with the concept of lists. Your task is to:
+
+#step 1: create an empty list named beatles;
+beatles =[]
+print("\nStep 1:", beatles) # Output the current list in beatles
+
+#step 2: use the append() method to add the following members of the band to the list: John Lennon, Paul McCartney, and George Harrison;
+beatles.append("John Lennon")
+beatles.append("Paul McCartney")
+beatles.append("George Harrison")
+
+print("\nStep 2:", beatles) # Output the current list in beatles 
+
+#step 3: use the for loop and the append() method to prompt the user to add the following members of the band to the list: Stu Sutcliffe, and Pete Best;
+for i in range(len(beatles)-1):
+    beatles.append(input("\nEnter the new members of the band: "))
+    
+print("\nStep 3:", beatles)  # Output the current list in beatles
+
+#step 4: use the del instruction to remove Stu Sutcliffe and Pete Best from the list;
+del beatles[-1]
+del beatles[-1]
+
+print("\nStep 4:", beatles)  # Output the current list in beatles
+
+#step 5: use the insert() method to add Ringo Starr to the beginning of the list.
+beatles.insert(0, "Ringo Starr")
+
+print("\nStep 5:", beatles) # Output the current list in beatles
+
+# Testing the list length
+print("\nThe Fab", len(beatles))

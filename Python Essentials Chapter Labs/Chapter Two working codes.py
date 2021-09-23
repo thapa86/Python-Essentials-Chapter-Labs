@@ -1,4 +1,3 @@
-
 #Prompting users to end a program.
 name = input("Enter your name: ")
 print("Hello, " + name + ". Nice to meet you!")
@@ -235,46 +234,157 @@ if counter != 0:
 else:
     print("You haven't entered any number.")
 
-#blocks = int(input("Enter the number of blocks: "))
 
-#
-# Write your code here.
-#	
+#for loop to count from 0 to 10 and print odd numbers
+for i in range(0, 11):
+    if i % 2 != 0:
+        print(i)
 
-#print("The height of the pyramid:", height)
-blocks = int(input("Enter the number of blocks: "))
-counter = 1
-layer = 1
+#while loop that counts from 0 to 10 and prints odd numbers
+x = 1
+while x < 11:
+    if x % 2 != 0:
+        print(x)
+    x += 1
 
-remaining_blocks = blocks - layer
+# for and break statement that stops at @ character and displays word before it
 
-while remaining_blocks != 0:
-    remaining_blocks = blocks-layer
-    layer +=1
-    counter+=1
-    #print(remaining_blocks)
-    print(counter)
-# Write your code here.
+for ch in "john.smith@pythoninstitute.org":
+    if ch == "@":
+        break
+    print(ch, end="")
 
-blocks = int(input("Enter the number of blocks: "))
-height = 0
-layer = 1
-remaining_blocks = blocks - layer
+#Program with for and continue loop to iterate over a string of digits
+#and replace each 0 with x and print the modified string to the screen
 
-while blocks != 0:
-    remaining_blocks = blocks-layer
-    print(remaining_blocks)
-    
-    layer +=1
-    continue
-    if remaining_blocks !=0:
-        remaining_blocks = blocks-layer
-        layer +=1
+for digit in "0165031806510":
+    if digit == "0":
+        print("x", end="")
         continue
-    print(remaining_blocks)
-    #counter+=1
-    #print(remaining_blocks)
-#	
+    print(digit, end="")
 
-#print("The height of the pyramid:", height)
+# Output of the following code - 4,3,2,0
+n = 3
 
+while n > 0:
+    print(n + 1)
+    n -= 1
+else:
+    print(n)
+
+# To output -1 0 1 2 3
+n = range(4)
+
+for num in n:
+    print(num - 1)
+else:
+    print(num)
+
+c0 = int(input("\nEnter any non-negative and non-zero integer number: ")) # Prompt user to enter any non-negative and non-zero integer number
+step = 0
+
+# While loop which will execute if value of 'c0' is not equal to 1
+while c0 !=1:
+    if c0%2 ==0: # any number divided by modulus of 2 if returns 0, then its even number
+        c0=c0/2
+    elif c0%2 != 0: # any number divided by modulus of 2 if returns 1, then its odd number
+        c0 = 3 * c0 + 1
+    step +=1 # increment of +1 for all iterations
+
+    print(int(c0)) # Print the intermediate values of c0. int() functions converts the float value to integer
+    
+else:
+    print("\nsteps =", step) # Prints the number of steps taken to achieve the goal
+
+
+#Chapter three Lists
+
+numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers)  # Printing original list content.
+
+numbers[0] = 111
+print("New list content: ", numbers)  # Current list content.
+
+numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers)  # Printing original list content.
+
+numbers[0] = 111
+print("\nPrevious list content:", numbers)  # Printing previous list content.
+
+numbers[1] = numbers[4]  # Copying value of the fifth element to the second.
+print("New list content:", numbers)  # Printing current list content.
+
+numbers = [10, 5, 7, 2, 1]
+print("Original list content:", numbers)  # Printing original list content.
+
+numbers[0] = 111
+print("\nPrevious list content:", numbers)  # Printing previous list content.
+
+numbers[1] = numbers[4]  # Copying value of the fifth element to the second.
+print("Previous list content:", numbers)  # Printing previous list content.
+
+print("\nList's length:", len(numbers))  # Printing previous list length.
+
+###
+
+del numbers[1]  # Removing the second element from the list.
+print("New list's length:", len(numbers))  # Printing new list length.
+print("\nNew list content:", numbers)  # Printing current list content.
+
+# Adding items to the list using append and insert method
+numbers = [111, 7, 2, 1]
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.append(4)
+
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.insert(0, 222)
+print(len(numbers))
+print(numbers)
+
+
+#List methods using for loop and append method
+my_list = []  # Creating an empty list.
+
+for i in range(5):
+    my_list.append(i + 1)
+
+print(my_list)
+
+# List methods using for loop and insert method
+# Using insert will list number in opposite direction to append
+
+my_list = []  # Creating an empty list.
+
+for i in range(5):
+    my_list.insert(0, i + 1)
+
+print(my_list)
+
+
+# Calculating the total values of the list
+
+my_list = [1,2,3,4,5]
+total = 0
+
+for i in my_list:
+    total = total +i
+
+print(total)
+
+# Reversing values using for loop
+
+my_list = [10, 1, 8, 3, 5]
+length = len(my_list)
+
+for i in range(length // 2):
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+
+print(my_list)
