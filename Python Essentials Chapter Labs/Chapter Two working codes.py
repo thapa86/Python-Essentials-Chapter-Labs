@@ -521,6 +521,11 @@ for day in temps:
             highest = temp
 print("The highest temperature was:" highest)
 
+# to print in like array
+for i in temps:
+    print(days,i)
+    days = days +i
+
 # Three dimensional Advanced list
 #eg: finding free rooms in three buildings with 15 floors and 20 rooms in each floor
 
@@ -539,4 +544,194 @@ for room_number in range(20):
     if not rooms[2][14][room_number]:
         vacancy += 1
 print(vacancy)
+
+# Multidimensional list
+# It consists of "expression", "for in list" and "if conditional"
+board = [["empty" for i in range(8)] for j in range(8)]
+board[0][0] = [[1],[2],[3]]
+print(board[0][0][2])
+
+# Using for loop to create the same 8 * 8 board
+board = []
+
+for i in range(8):
+    row = ["Empty" for i in range(8)]
+    board.append(row)
+
+#is same as compact form
+board = [["Empty" for i in range(8)] for j in range(8)]
+
+# To identify the list, in board[0][2], [0] refers to the row and [2] refers to the column.
+
+#Chapter 4 -Defining functions
+#built-in, pre-installed modules, user-defined functions
+def function_name():
+    function_body
+
+def message(): # Defining a function
+    print("Enter a value: ") # body of the function
+
+def message():
+    print("Enter a value: ")
+
+message() # calling the function
+a = int(input())
+message()
+b = int(input())
+message()
+c = int(input())
+
+#Parameterized functions
+def message(number):
+    print("Enter a number:", number)
+
+message(1)
+
+#This will output "Enter a number: 1"
+
+#Two arguments required for two parameters used within the function
+def message(what, number):
+    print("Enter", what, "number", number)
+
+message("telephone", 11)
+message("price", 5)
+message("number", "number")
+
+#The output will be 
+#Enter telephone number 11
+#Enter price number 5
+#Enter number number number
+
+#Positional argument passing
+def introduction(first_name, last_name):
+    print("Hello, my name is", first_name, last_name)
+
+introduction("Skywalker", "Luke")
+introduction("Quick", "Jesse")
+introduction("Kent", "Clark")
+
+#Argument passing
+def introduction(first_name, last_name):
+    print("Hello, my name is", first_name, last_name)
+
+introduction(first_name = "James", last_name = "Bond")
+introduction(last_name = "Skywalker", first_name = "Luke")
+
+
+# Mixing both positional and argument
+def adding(a, b, c):
+    print(a, "+", b, "+", c, "=", a + b + c)
+
+    adding(1,2,3)
+#The output will be 1+2+3 =6
+
+#or
+adding(c=1, b=3, c=1)
+#The output will be 2+3+1 =6
+
+#or
+adding(3, c=1, b=2)
+#The output will be 3+2+1 = 6
+
+# Parametrized functions
+def introduction(first_name, last_name="Smith"):
+    print("Hello, my name is", first_name, last_name)
+
+# Call the function here.
+introduction("James", "Doe")
+introduction("Henry")
+introduction(first_name="William")
+
+# The output will be
+# Hello, my name is James Doe
+#Hello, my name is Henry Smith
+#Hello, my name is William Smith
+
+#Example of three-parameter function
+def address(street, city, postal_code):
+    print("Your address is:", street, "St.,", city, postal_code)
+
+s = input("Street: ")
+p_c = input("Postal Code: ")
+c = input("City: ")
+
+address(s, c, p_c)
+
+#This is wrong example, positional argument must not follow keyword arguments
+def subtra(a, b):
+    print(a - b)
+
+subtra(5, b=2)    # outputs: 3
+subtra(a=5, 2)    # Syntax Error
+
+# Returning a result from a function
+
+def happy_new_year(wishes = True):
+    print("Three...")
+    print("Two...")
+    print("One...")
+    if not wishes: #if not True, will terminate the function
+        return
+    
+    print("Happy New Year!")
+
+    happy_new_year(True)
+    #will output: 
+    #Three...
+    #Two...
+    #One...
+    #Happy New Year!
+
+# def boring_function():
+    print("'Boredom Mode' ON.")
+    return 123
+
+print("This lesson is interesting!")
+boring_function()
+print("This lesson is boring...")
+
+#This will output
+#This lesson is interesting!
+#'Boredom Mode' ON. # From the function, return is ignored in this instance
+#This lesson is boring...
+
+# Returning a result from a function
+def strange_function(n):
+    if(n % 2 == 0):
+        return True
+
+print(strange_function(4))
+print(strange_function(1))
+
+#The output will be:
+#True
+#None
+
+# Lists and functions
+def list_sum(lst)
+    s = 0
+
+    for element in lst:
+        s+=element
+
+    return s
+
+print("The sum of the list is:", list_sum([5,4,3]))
+print(list_sum([5, 4, 3]))
+
+# The output
+# The sum of the list is: 12
+
+def strange_list_fun(n): #n=5
+    strange_list = []
+    
+    for i in range(0, n):
+        strange_list.insert(0, i) # As the value is in reverse order, use insert method with 0 placeholder
+    
+    return strange_list
+
+print(strange_list_fun(5)) # invokes the function and passes '5' to the function above
+
+#The output will be
+#[4,3,2,1,0]
 

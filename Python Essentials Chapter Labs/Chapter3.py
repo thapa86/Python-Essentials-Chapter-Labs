@@ -311,35 +311,3 @@ for i in range(len(simple_list)):
 print("\n\nThe list with unique elements only:")
 print(unique_list) 
 
-
-# Chapter 3 - Tic tac game
-# Code to create the board using lists within lists
-#put code here to create your board using lists within lists. Populate each of the 9 spaces on 
-#the board with a "_"
-import random
-tttBoard = [["-" for i in range(3)] for j in range(3)]
-win_1 = tttBoard[0][0]==tttBoard[0][1]==tttBoard[0][2]
-win_2 = tttBoard[1][0]==tttBoard[1][1]==tttBoard[1][2]
-win_3 = tttBoard[2][0]==tttBoard[2][1]==tttBoard[2][2]
-win_4 = tttBoard[0][0]==tttBoard[1][0]==tttBoard[2][0]
-win_5 = tttBoard[0][1]==tttBoard[1][1]==tttBoard[2][1]
-win_6 = tttBoard[0][2]==tttBoard[2][2]==tttBoard[2][2]
-win_7 = tttBoard[0][0]==tttBoard[1][1]==tttBoard[2][2]
-win_8 = tttBoard[2][0]==tttBoard[2][1]==tttBoard[0][2]
-win = False
-row_index = [0,1,2]
-column_index =[0,1,2]
-
-#Minimum exercise
-for turns in range(30):
-    for elements in tttBoard:
-        print("\nCurrent Board:")
-        if elements != "x" or "o":
-            for elements in tttBoard:
-                print(elements)
-            user_row = random.choice(row_index)
-            user_column = random.choice(column_index)
-            confirm = input("\nDo you want to proceed? Press Enter")
-            tttBoard[user_row][user_column]="o"
-        if "-" not in elements:
-            print("Gameover")
