@@ -479,3 +479,64 @@ for number in chosen_number:
         hits+=1
 
 print(hits)
+
+
+#Two-dimensional arrays - Chess board
+EMPTY = "-"
+ROOK = "ROOK"
+board = []
+
+for i in range(8):
+    row = [EMPTY for i in range(8)]
+    board.append(row)
+
+board[0][0] = ROOK
+board[0][7] = ROOK
+board[7][0] = ROOK
+board[7][7] = ROOK
+
+print(board)
+
+
+# Lists in advanced applications
+# To calcuate the average temperature during noon in a month
+temps = [[0.0 for h in range(24)] for d in range(31)] # This will create [[0,0,0,0,0..], [0,0,0,0,0,...],[...]]
+#
+# The matrix is magically updated here.
+#
+
+total = 0.0
+highest = -100
+
+for day in temps:
+    total += day[11]
+
+average = total / 31
+
+print("Average temperature at noon:", average)
+
+for day in temps:
+    for temps in day:
+        if temps > highest:
+            highest = temp
+print("The highest temperature was:" highest)
+
+# Three dimensional Advanced list
+#eg: finding free rooms in three buildings with 15 floors and 20 rooms in each floor
+
+rooms = [[[False for r in range(20)] for f in range(15)] for t in range(3)]
+print(rooms)
+
+#To book a room
+rooms[2][14][1] = True
+
+#To cancel a room
+rooms[0][0][3] = False 
+
+vacancy = 0
+
+for room_number in range(20):
+    if not rooms[2][14][room_number]:
+        vacancy += 1
+print(vacancy)
+
