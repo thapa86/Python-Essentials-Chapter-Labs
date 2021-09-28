@@ -97,6 +97,7 @@ for i in range(len(test_years)):
 	else:
 		print("Failed")
 
+print()
 
 # *********************************************************************************************************************************************
 # Chapter 4.3.1.8 Day of the year: writing and using your own functions
@@ -115,7 +116,6 @@ def is_year_leap(year):
 		return False
 	else:
 		return True # Otherwise, the year is a leap year
-
 # Creates a function which takes two arguments (a year and a month)
 def days_in_month(year, month):
 
@@ -137,29 +137,57 @@ def days_in_month(year, month):
 # Function which takes three arguments (a year, a month, and a day of the month)
 def day_of_year(year, month, day):
 
-# and returns the corresponding day of the year, 
-# or returns None if any of the arguments is invalid.
+	# The Gregorian calendar only started in 1582. So, for taking 1583 as the start year, following days calculated
+	days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", ]
+	
+	leap_years = [] # Store all the leap years
+	days_leap_year = [31,29,31,30,31,30,31,31,30,31,30,31]
+	days_common_year = [31,28,31,30,31,30,31,31,30,31,30,31]
+	days_in_selected_year = []
+	
+#Year 1, month 1 and day 1 started at saturday
+# for loop to calculate number of leap years
+	for i in range(1,year):
+		if is_year_leap(i):
+			leap_years.append(i)
+			i += 1
+	print()
+	#print(len(leap_years))
 
-print(day_of_year(2000, 12, 31))
-# Use the previously written and tested functions. Add some test cases to the code. This test is only a beginning.	
+	# Calculate the total number of days in leap year before the year parameter
+	total_days_in_leap_year = len(leap_years) * 366
 
+	# Calculate the total number of days in common year before the year parameter
+	total_days_in_common_year = (year - len(leap_years)) * 365
 
+	# Calculate the number of days in given year parameter
+	if is_year_leap(year):
+		for j in range(0, int(month)):
+			days_in_selected_year.append(days_leap_year[j])
+			j +=1
+		print()	
+		#print((days_leap_year[month-1]))
+		#print(days_in_selected_year)
 
+	# Calculate total days in selected year
+	total_days_in_selected_year = sum(days_in_selected_year)
+	#print(total_days_in_selected_year)
 
+	# Calculate the total days altogether
+	total_days_altogether = total_days_in_leap_year + total_days_in_common_year + total_days_in_selected_year
+	#print(total_days_altogether)
 
+	# As there is 7 days in a week, modulus of 7 gives the position of the day in days list 
+	position_of_day = total_days_altogether % 7
+	#print(position_of_day)
 
+	# Finally, the day in that particular year and month
+	particular_day = days[position_of_day - 1]
+	return(particular_day)
 
-
-
-
-
-
-
-
-
-
-
-
+print("\nThe day of the selected year is:")
+print(day_of_year(2000,3, 31)) # This will take the parameters for the function and invoke the function
+print()
 
 # **********************************************************************************************************************************
 # Chapter 4.3.1.9 Prime numbers - how to find them
@@ -194,6 +222,7 @@ print()
 # Chapter 4.3.1.10 Converting fuel consumption
 # This lab is about converting fuel consumption in Europe and the USA
 
+# Creating the function which has a single parameter of 'litres'
 def liters_100km_to_miles_gallon(litres):
     
     conversion_to_miles_per_gallon = (3.785411784 * 100000)/(litres * 1609.344) # 1 ltr = 1/3.785411784 gallon and 1 miles = 1.609344 km
@@ -201,12 +230,12 @@ def liters_100km_to_miles_gallon(litres):
     return conversion_to_miles_per_gallon # returns the value calculated as conversion from above step
 
 # takes 3.9 as argument and displays the converted result in miles per gallon
-print(liters_100km_to_miles_gallon(3.9))
+print("\n",liters_100km_to_miles_gallon(3.9))
 print(liters_100km_to_miles_gallon(7.5))
 print(liters_100km_to_miles_gallon(10.))
 
-#1 American mile = 1609.344 metres
-#1 American gallon = 3.785411784 litres
+# 1 American mile = 1609.344 metres
+# 1 American gallon = 3.785411784 litres
 # Litres to gallon
     #1 ltr = 1/3.785411784 gallon
 # Gallon to litres
@@ -216,6 +245,7 @@ print(liters_100km_to_miles_gallon(10.))
 # Km to miles
     #1 km = 1/1.609344 km
 
+# Creating a function which takes miles as argument and convert it into liters per 100 km
 def miles_gallon_to_liters_100km(miles):
 
     conversion_to_liters_per_100km = (3.785411784 * 100)/(miles * 1.609344) # 1 ltr = 1/3.785411784 gallon and 1 miles = 1.609344 km
