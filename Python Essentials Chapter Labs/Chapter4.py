@@ -9,15 +9,20 @@
 
 # Creating a function which will take year as parameter
 def is_year_leap(year):
-	if year < 1583:
+
+	if year < 1583: # Validates the year is not before 1583
 		return None
+
 # If and elif statement which defines the condition for a year to be a leap year
 	if year % 4 != 0: # if the year is not evenly divisible by 4, then it is not a leap year
 		return False
+
 	elif year % 100 != 0: #modulus of 100 if returns 0 means exactly divisible by 100. If not exactly divisible, it is a leap year
 		return True
+
 	elif year % 400 != 0: # if not evenly divisible by 400, then it is not a leap year
 		return False
+
 	else:
 		return True # Otherwise, the year is a leap year
 
@@ -49,13 +54,19 @@ for i in range(len(test_data)): # for loop which will iterate acording to the ra
 def is_year_leap(year):
 
 # Code from LAB 4.3.1.6.
+	if year < 1583: # Validates the year is not before 1583
+		return None
+
 # If and elif statement which defines the condition for a year to be a leap year
 	if year % 4 != 0: # if the year is not evenly divisible by 4, then it is not a leap year
 		return False
+
 	elif year % 100 != 0: #modulus of 100 if returns 0 means exactly divisible by 100. If not exactly divisible, it is a leap year
 		return True
+
 	elif year % 400 != 0: # if not evenly divisible by 400, then it is not a leap year
 		return False
+
 	else:
 		return True # Otherwise, the year is a leap year
 
@@ -108,15 +119,22 @@ print()
 # Code from LAB 4.3.1.6.
 def is_year_leap(year):
 
-# If and elif statement which defines the condition for a year to be a leap year
+	if year < 1583: # Validates the year is not before 1583
+		return None
+
+	# If and elif statement which defines the condition for a year to be a leap year
 	if year % 4 != 0: # if the year is not evenly divisible by 4, then it is not a leap year
 		return False
+
 	elif year % 100 != 0: #modulus of 100 if returns 0 means exactly divisible by 100. If not exactly divisible, it is a leap year
 		return True
+
 	elif year % 400 != 0: # if not evenly divisible by 400, then it is not a leap year
 		return False
+
 	else:
 		return True # Otherwise, the year is a leap year
+
 # Creates a function which takes two arguments (a year and a month)
 def days_in_month(year, month):
 
@@ -137,6 +155,7 @@ def days_in_month(year, month):
 
 # Function which takes three arguments (a year, a month, and a day of the month)
 def day_of_year(year, month, day):
+
 	if year < 1583: # Validates the year is after the Gregorian Calendar was introduced
 		print("Not valid year")
 		return None
@@ -183,28 +202,24 @@ def day_of_year(year, month, day):
 			days_in_selected_year.append(days_leap_year[j])
 			j +=1
 		print()	
-		#print((days_leap_year[month-1]))
-		#print(days_in_selected_year)
-
+		
 	# Calculate total days in selected year
 	total_days_in_selected_year = sum(days_in_selected_year)
-	#print(total_days_in_selected_year)
-
+	
 	# Calculate the total days altogether
 	total_days_altogether = total_days_in_leap_year + total_days_in_common_year + total_days_in_selected_year
-	#print(total_days_altogether)
-
+	
 	# As there is 7 days in a week, modulus of 7 gives the position of the day in days list 
 	position_of_day = total_days_altogether % 7
-	#print(position_of_day)
-
+	
 	# Finally, the day in that particular year and month
 	particular_day = days[position_of_day - 1]
 	return(particular_day)
 
 print("\nThe day of the selected year is:")
-print(day_of_year(2021,12, 0)) # This will take the parameters for the function and invoke the function
+print(day_of_year(2000,12, 31)) # This will take the parameters for the function and invoke the function
 print()
+
 
 # **********************************************************************************************************************************
 # Chapter 4.3.1.9 Prime numbers - how to find them
