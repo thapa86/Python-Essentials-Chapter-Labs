@@ -9,7 +9,8 @@
 
 # Creating a function which will take year as parameter
 def is_year_leap(year):
-	
+	if year < 1583:
+		return None
 # If and elif statement which defines the condition for a year to be a leap year
 	if year % 4 != 0: # if the year is not evenly divisible by 4, then it is not a leap year
 		return False
@@ -136,23 +137,39 @@ def days_in_month(year, month):
 
 # Function which takes three arguments (a year, a month, and a day of the month)
 def day_of_year(year, month, day):
+	if year < 1583: # Validates the year is after the Gregorian Calendar was introduced
+		print("Not valid year")
+		return None
+	if month <= 0: # Validates the month is not entered as '0'
+		print("Not valid month")
+		return None
+	if month > 12: # Validates the month is not entered greater than '12'
+		print("Not valid month")
+		return None
+	if day <= 0 : # Validates the day is not entered as '0'
+		print("Not valid day")
+		return None
+	if day > 31: # Validates the day is not entered greater than '31'
+		print("Not valid day")
+		return None
 
 	# The Gregorian calendar only started in 1582. So, for taking 1583 as the start year, following days calculated
-	days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", ]
+	days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]
 	
 	leap_years = [] # Store all the leap years
 	days_leap_year = [31,29,31,30,31,30,31,31,30,31,30,31]
 	days_common_year = [31,28,31,30,31,30,31,31,30,31,30,31]
 	days_in_selected_year = []
-	
-#Year 1, month 1 and day 1 started at saturday
-# for loop to calculate number of leap years
-	for i in range(1,year):
+		
+	# Year 1, month 1 and day 1 started at saturday
+	# for loop to calculate number of leap years
+	for i in range(1583,year):
 		if is_year_leap(i):
 			leap_years.append(i)
 			i += 1
 	print()
-	#print(len(leap_years))
+	
+	# print(len(leap_years))
 
 	# Calculate the total number of days in leap year before the year parameter
 	total_days_in_leap_year = len(leap_years) * 366
@@ -186,7 +203,7 @@ def day_of_year(year, month, day):
 	return(particular_day)
 
 print("\nThe day of the selected year is:")
-print(day_of_year(2000,3, 31)) # This will take the parameters for the function and invoke the function
+print(day_of_year(2021,12, 0)) # This will take the parameters for the function and invoke the function
 print()
 
 # **********************************************************************************************************************************
