@@ -18,7 +18,7 @@ print("    *\n   * *\n  *   *\n *     *\n***   ***\n  *   *\n  *   *\n  *****\n"
 print("Single Arrow")
 print("    *")
 print("   * *")
-print("  *   *")
+print("  *   *") 
 print(" *     *")
 print("***   ***")
 print("  *   *")

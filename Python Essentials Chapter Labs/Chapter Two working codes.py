@@ -1,3 +1,17 @@
+#Chapter 2 Labs codes
+
+print("The itsy bitsy spider\nclimbed up the waterspout.")
+
+# The output will be
+# The itsy bitsy spider
+# climbed up the waterspout.
+
+# Print the octal number
+print(00123)
+
+# Print the hexadecimal number
+print(0x123)
+
 #Prompting users to end a program.
 name = input("Enter your name: ")
 print("Hello, " + name + ". Nice to meet you!")
@@ -735,3 +749,592 @@ print(strange_list_fun(5)) # invokes the function and passes '5' to the function
 #The output will be
 #[4,3,2,1,0]
 
+# Scopes in python
+
+def my_function(): 
+    print("Do I know that variable?", var) 
+
+var = 1 # Outside the function
+my_function() 
+print(var) 
+
+# Output will be 
+# Do I know that variable?1
+# 1
+
+def my_function():  
+var = 2 print("Do I know that variable?", var)  
+
+var = 1 # Outside the function 
+my_function()  
+print(var) 
+
+# The output will be 
+# Do I know that variable? 2 
+# 1 
+
+#How the functions interacts with its arguments? 
+
+def my_function(n): 
+    print("I got", n) 
+    n += 1 
+    print("I have", n) 
+
+var = 1 # Outside the function
+my_function(var) 
+print(var) 
+
+# The output will be 
+# I got 1 
+# I have 2  
+# 1 
+
+# Changing the parameter’s value does not propagate outside the function.
+
+# The Global Keyword
+# Using this keyword eg global var can modify the variable outside the function 
+
+def my_function(): 
+    global var 
+    var = 2 
+        print("Do I know that variable?", var) 
+
+var = 1 # Outside the function 
+my_function() 
+print(var) 
+# Th output will be 
+# Do I know that variable? 2 
+# 2
+
+# Scope in lists
+def my_function(my_list_1):
+    print("Print #1:", my_list_1)
+    print("Print #2:", my_list_2)
+    my_list_1 = [0, 1]
+    print("Print #3:", my_list_1)
+    print("Print #4:", my_list_2)
+
+my_list_2 = [2, 3]
+my_function(my_list_2)
+print("Print #5:", my_list_2)
+
+# The output will be
+# Print #1: [2, 3]
+# Print #2: [2, 3]
+# Print #3: [0, 1]
+# Print #4: [2, 3]
+# Print #5: [2, 3]
+
+def my_function(my_list_1):
+    print("Print #1:", my_list_1)
+    print("Print #2:", my_list_2)
+    del my_list_1[0]  # Pay attention to this line.
+    print("Print #3:", my_list_1)
+    print("Print #4:", my_list_2)
+
+
+my_list_2 = [2, 3]
+my_function(my_list_2)
+print("Print #5:", my_list_2)
+
+# The output will be
+# Print #1: [2, 3]
+# Print #2: [2, 3]
+# Print #3: [3]
+# Print #4: [3]
+# Print #5: [3]
+
+# A variable that exists inside a function has a scope inside the function body
+def adding(x):
+    var = 7
+    return x + var
+
+print(adding(4))    # outputs: 11
+print(var)    # NameError
+
+var = 2
+print(var)    # outputs: 2
+
+# global keyword followed by a variable name makes the variable's scope global
+
+def return_var():
+    global var
+    var = 5
+    return var
+
+print(return_var())    # outputs: 5
+print(var)    # outputs: 5
+
+
+# The output will be 2, 2
+a = 1
+
+def fun():
+    global a
+    a = 2
+    print(a)
+
+a = 3
+fun()
+print(a)
+
+# The output will be 2
+# 3
+a = 1
+
+def fun():
+    global a
+    a = 2
+    print(a)
+
+fun()
+a = 3
+print(a)
+
+# The two-parameter function to calculate BMI
+# Convert fit and inch to meters.
+def ft_and_inch_to_m(ft, inch = 0.0):
+    return ft * 0.3048 + inch * 0.0254
+
+# Convert pounds to kg
+def lb_to_kg(lb):
+    return lb * 0.45359237
+
+# Calculate BMI
+def bmi(weight, height):
+    if height < 1.0 or height > 2.5 or weight < 20 or weight > 200:
+        return None
+    
+    return weight / height ** 2
+
+# Print the result of the calculation
+print(bmi(weight = lb_to_kg(176), height = ft_and_inch_to_m(5, 7)))
+
+# To check if we can create a triangle with three sides
+def is_a_triangle(a, b, c):
+    if a + b <= c:
+        return False
+    if b + c <= a:
+        return False
+    if c + a <= b:
+        return False
+    return True
+
+print(is_a_triangle(1, 1, 1))
+print(is_a_triangle(1, 1, 3))
+
+# The more compact form
+def is_a_triangle(a, b, c):
+    return a + b > c and b + c > a and c + a > b
+
+print(is_a_triangle(1, 1, 1))
+print(is_a_triangle(1, 1, 3))
+
+# To check if the triangle is a right-angle triangle
+
+def is_triangle_right_angled (a,b,c):
+    if is_a_triangle(a,b,c):
+        return True
+    if c**" == a**2 + b**2":
+        return True
+
+# The more compact form for checking if it is a triangle
+def is_a_triangle(a, b, c): # Needs checking if it is a triangle
+    return a + b > c and b + c > a and c + a > b
+
+print(is_a_triangle(1, 1, 1))
+print(is_a_triangle(1, 1, 3))
+
+# To check if the triangle is a right-angle triangle
+
+def is_triangle_right_angled(a,b,c):
+    if is_a_triangle(a,b,c): # If it is a triangle
+        return True
+    if c**2 == a**2 + b**2: # Using pythogoras theorem
+        return True
+    if a**2 == c**2 + b**2:
+        return True
+    if b**2 == a**2 + c**2:
+        return True
+    return False # Return False otherwise
+    
+print(is_triangle_right_angled(5,4,3))
+
+# with user input
+# The more compact form
+def is_a_triangle(a, b, c): # Needs checking if it is a triangle
+    return a + b > c and b + c > a and c + a > b
+
+#print(is_a_triangle(1, 1, 1))
+#print(is_a_triangle(1, 1, 3))
+
+# To check if the triangle is a right-angle triangle
+
+def is_triangle_right_angled(a,b,c):
+    if is_a_triangle(a,b,c): # If it is a triangle
+        return True
+    if c**2 == a**2 + b**2: # Using pythogoras theorem
+        return True
+    if a**2 == c**2 + b**2:
+        return True
+    if b**2 == a**2 + c**2:
+        return True
+    return False # Return False otherwise
+a = float(input("Enter the first side\'s length: ")) 
+b = float(input("Enter the first side\'s length: "))
+c = float(input("Enter the first side\'s length: ")) 
+
+print(is_triangle_right_angled(a,b,c))
+
+# Evaluating a triangle's area
+def is_a_triangle(a, b, c): # Needs checking if it is a triangle
+    return a + b > c and b + c > a and c + a > b
+
+#print(is_a_triangle(1, 1, 1))
+#print(is_a_triangle(1, 1, 3))
+
+# To check if the triangle is a right-angle triangle
+
+# Calculate the value of S
+def heron_formula(a,b,c):
+    s = (a +b +c) / 2
+    return (s*(s-a)*(s-b)*(s-c))**0.5
+
+# To calculate the area of the triangle
+
+def area_of_triangle(a,b,c):
+    if not is_a_triangle(a,b,c):
+        return None
+    return heron_formula(a,b,c)
+
+print(area_of_triangle(1,1.,2**.5))
+
+# Factorials Function
+# 0! = 1 (yes! it's true)
+# 1! = 1
+# 2! = 1 * 2
+# 3! = 1 * 2 * 3
+# 4! = 1 * 2 * 3 * 4
+# :
+# :
+# n! = 1 * 2 ** 3 * 4 * ... * n-1 * n
+
+def factorial_function(n):
+    if n < 0:
+        return None
+    if n < 2:
+        return 1 
+    product = 1
+    for i in range(2, n+1):
+        product = product * i
+    return product
+
+#Testing for 1 to 6
+for n in range(0, 6): # For loop to select the number from range 1 to 6
+    print(n, factorial_function(n))
+
+#(Fibi = Fibi-1 + Fibi-2)
+#Here are some of the first Fibonacci numbers:
+
+#fib_1 = 1
+#fib_2 = 1
+#fib_3 = 1 + 1 = 2
+#fib_4 = 1 + 2 = 3
+#fib_5 = 2 + 3 = 5
+#fib_6 = 3 + 5 = 8
+#fib_7 = 5 + 8 = 13
+
+def fibonacci_numbers(n):
+    if n <= 2 and n> 0:
+        return 1
+    sum = 0
+    elem_1= elem_2=1
+    for i in range(3, n+1):
+        sum = elem_1 + elem_2
+        elem_1, elem_2 = elem_2, sum
+    return sum
+# Testing using for loop
+for n in range(1, 10):
+    print("fib_",n,"=", fibonacci_numbers(n))
+
+# Recursion
+#In this field, recursion is a technique where a function invokes itself.
+#These two cases seem to be the best to illustrate the phenomenon - factorials and Fibonacci numbers. Especially the latter.
+#The Fibonacci numbers definition is a clear example of recursion. We already told you that:
+#Fibi = Fibi-1 + Fibi-2
+
+def fibonacci_numbers(n):
+    if n <= 2 and n> 0:
+        return 1
+    return fibonacci_numbers(n-1)+fibonacci_numbers(n-2)
+    
+# Testing using for loop
+for n in range(1, 10):
+    print("fib_",n,"=", fibonacci_numbers(n))
+
+# Recursion for factorial
+def factorial_function(n):
+    if n < 0:
+        return None
+    if n < 2:
+        return 1
+    return n * factorial_function(n - 1)
+# Testing using for loop
+for n in range(1, 10):
+    print("The factor of",n,"=", factorial_function(n))
+
+# Tuple and dictionaries
+
+# To create tuples
+empty_tuple = ()
+
+# To create one element tuple
+one_element_tuple = (1,) # if only number provided, it will assign it as variable and not tuple
+one_element_tuple = 1,
+
+my_tuple = (1, 10, 100, 1000)
+
+print(my_tuple[0]) # Output will be 1
+print(my_tuple[-1]) # Output will be 1000
+print(my_tuple[1:]) # Output will be (10, 100, 1000)
+print(my_tuple[:-2]) # Output will be (1,10)
+
+for elem in my_tuple:
+    print(elem)
+# Output will be
+# 1
+# 10
+# 100
+# 1000
+
+my_tuple = (1, 10, 100)
+
+t1 = my_tuple + (1000, 10000) # Concatenate the tuple with 1000 and 10000
+t2 = my_tuple * 3 # repeats the values inside tuple for three times
+
+print(len(t2))
+print(t1)
+print(t2)
+print(10 in my_tuple)
+print(-10 not in my_tuple)
+
+# Tuple can also appear on the left side of the assignment operator '='
+var = 123
+
+t1 = (1, )
+t2 = (2, )
+t3 = (3, var)
+
+t1, t2, t3 = t2, t3, t1 # The values will be swapped
+
+print(t1, t2, t3)
+
+# This will count the number of 2 inside the tuple
+tup = 1, 2, 3, 2, 4, 5, 6, 2, 7, 2, 8, 9
+duplicates = tup.count(2)
+
+print(duplicates)    # outputs: 4
+
+
+# Dictionary is a key-value pairs. Key is the word you are looking for in dictionary
+# Value is the word returned by the dictionary
+# 3 dictionaries
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"} # keys and values which are both string
+phone_numbers = {'boss': 5551234567, 'Suzy': 22657854310} # keys are strings but values are integers
+# Keys as numbers and values as strings or number - number combination is also possible
+empty_dictionary = {}
+
+print(dictionary)
+print(phone_numbers)
+print(empty_dictionary)
+
+print()
+
+# will print the dictionary. The order may be random as they are not lists and the order
+# is not preserved
+print(dictionary)
+print(phone_numbers)
+print(empty_dictionary)
+        
+print(dictionary["cat"]) # Will print 'chat'   
+print(dictionary["Suzy"]) # Will print 22657854310   
+
+# How to use a dictionary
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+words = ['cat', 'lion', 'horse']
+
+# Methods and functions
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+print(dictionary.items()) # print as tuple
+sorted(dictionary.keys()) # print as list
+print(dictionary.values()) # print as list
+
+#Console 
+#dict_items([('cat', 'chat'), ('dog', 'chien'), ('horse', 'cheval')])
+#dict_values(['chat', 'chien', 'cheval'])
+#dict_keys(['cat', 'dog', 'horse'])
+
+# looks for each word in "words" list and if found returns the values from dictionary
+# else, will print is not in dictionary
+for word in words:
+    if word in dictionary:
+        print(word, "->", dictionary[word])
+    else:
+        print(word, "is not in dictionary")
+
+# When creating dictionaries, hanging indents can be used to make it more readable and programmer friendly
+dictionary = {
+              "cat": "chat",
+              "dog": "chien",
+              "horse": "cheval"
+              }
+
+# Example 2:
+phone_numbers = {'boss': 5551234567,
+                 'Suzy': 22657854310
+                 }
+
+# For loop for dictionary (using keys() method)
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for key in dictionary.keys(): #keys method
+    print(key, ">", dictionary[key])
+
+    # the output will be
+    #horse -> cheval
+    #dog -> chien
+    #cat -> chat
+
+for key in sorted(dictionary.keys()): # sort() function to sort out the dictionary
+    print(key, ">", dictionary[key])
+
+# Using items() to publish key-value pair
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for english, french in dictionary.items():
+    print(english, "->", french)
+
+# Using values() method to just print the values
+dictionary = {"cat": "chat", "dog": "chien", "horse": "cheval"}
+
+for french in dictionary.values():
+    print(french)
+#Output will be
+#cheval
+#chein
+#chat
+
+# To replace the value for "cat"
+dictionary['cat'] = 'minou'
+
+# To replace the value for "cat"
+dictionary['man'] = 'erfee'
+
+# To insert an item, use update() method
+dictionary.update({"duck":"canard"})
+
+# To remove an item
+
+del dictionary["man"]
+
+# To remove the lst item in a dictionary, you can use the popitem() method
+# In Pythone before 3.6.7, method removes the random item from the dictionary
+
+dictionary.popitem()
+
+del pol_eng_dictionary    # removes the dictionary
+pol_eng_dictionary.clear()   # removes all the items
+# To copy dictionary, use copy() method
+pol_eng_dictionary = {
+    "zamek": "castle",
+    "woda": "water",
+    "gleba": "soil"
+    }
+
+copy_dictionary = pol_eng_dictionary.copy()
+
+# To copy from two dictionaries
+
+d1 = {'Adam Smith': 'A', 'Judy Paxton': 'B+'}
+d2 = {'Mary Louis': 'A', 'Patrick White': 'C'}
+d3 = {}
+
+for item in (d1, d2):
+    d3.update(item)
+
+print(d3)
+
+# To convert tuple into dictionary
+colors = (("green", "#008000"), ("blue", "#0000FF"))
+colors_dictionary = dict(colors)
+
+print(colors_dictionary)
+
+# A program to store students score and calculate average using dictionary and tuple
+school_class = {} # create an empty dictionary for the input data; the student's name
+                  #is used as a key, while all the associated scores are stored in a tuple
+                  #(the tuple may be a dictionary value - that's not a problem at all)
+
+while True: # enter an "infinite" loop (don't worry, it'll break at the right moment)
+    name = input("Enter the student's name: ") # read the student's name here;
+    if name == '': # if the name is an empty string (), leave the loop;
+        break
+    
+    # ask for one of the student's scores (an integer from the range 0-10)
+    score = int(input("Enter the student's score (0-10): "))
+
+    #if the score entered is not within the range from 0 to 10, leave the loop;
+    if score not in range(0, 11):
+	    break
+    
+    # if the student's name is already in the dictionary, 
+    # lengthen the associated tuple with the new score (note the += operator)
+    if name in school_class:
+        school_class[name] += (score,)
+
+     #if this is a new student (unknown to the dictionary), create a new entry - 
+     #its value is a one-element tuple containing the entered score;
+    else:
+        school_class[name] = (score,)
+        
+for name in sorted(school_class.keys()): # iterate through the sorted students' names;
+    adding = 0 # initialize the data needed to evaluate the average (sum and counter)
+    counter = 0 # initialize the data needed to evaluate the average (sum and counter)
+    
+    # we iterate through the tuple, taking all the subsequent scores and updating the sum,
+    # together with the counter;
+    for score in school_class[name]:
+        adding += score
+        counter += 1
+    print(name, ":", adding / counter) # evaluate and print the student's name and average score.
+
+my_tuple = tuple((1, 2, "string"))
+print(my_tuple)
+
+my_list = [2, 4, 6]
+print(my_list)    # outputs: [2, 4, 6]
+print(type(my_list))    # outputs: <class 'list'>
+tup = tuple(my_list)
+print(tup)    # outputs: (2, 4, 6)
+print(type(tup))    # outputs: <class 'tuple'>
+
+#Exceptions
+# Two exceptions specified
+try:
+    value = int(input('Enter a natural number: '))
+    print('The reciprocal of', value, 'is', 1/value)        
+except ValueError:
+    print('I do not know what to do.')    
+except ZeroDivisionError:
+    print('Division by zero is not allowed in our Universe.') 
+
+# The last line represents the default exception
+try:
+    value = int(input('Enter a natural number: '))
+    print('The reciprocal of', value, 'is', 1/value)        
+except ValueError:
+    print('I do not know what to do.')    
+except ZeroDivisionError:
+    print('Division by zero is not allowed in our Universe.')    
+except:
+    print('Something strange has happened here... Sorry!')

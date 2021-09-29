@@ -72,7 +72,8 @@ def is_year_leap(year):
 
 # Creates a function which takes two arguments (a year and a month)
 def days_in_month(year, month):
-
+	if year < 1582 or month <1 or month >12: # Validates if the entered year and month is correct
+		return None
 	# List for common year months. Each month has 28,30 or 31 days for common year
 	days_common_year = [31,28,31,30,31,30,31,31,30,31,30,31] # List of days in months for common year
 	
@@ -288,3 +289,4 @@ def miles_gallon_to_liters_100km(miles):
 print(miles_gallon_to_liters_100km(60.3))
 print(miles_gallon_to_liters_100km(31.4))
 print(miles_gallon_to_liters_100km(23.5))
+
