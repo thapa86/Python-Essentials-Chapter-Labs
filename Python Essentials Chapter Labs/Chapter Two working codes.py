@@ -20,6 +20,30 @@ print("\nPress Enter to end the program.")
 input()
 print("THE END.")
 
+#Chapter Two
+# How to use input function
+
+anything = input("Enter a number: ") # The input is stored as strings. But can be casted using int or float
+something = anything ** 2.0 # This is wrong example. Cannot use string with float numbers
+print(anything, "to the power of 2 is", something)
+
+# But if casted using int or float(), it will return result
+
+# Team consisting of the trio input(), int() and float(). 
+leg_a = float(input("Input first leg length: ")) 
+leg_b = float(input("Input second leg length: ")) 
+hypo = (leg_a**2 + leg_b**2) ** .5 
+
+print("Hypotenuse length is", hypo) 
+
+#As print() function accepts an expression as its argument, hypo variable 
+#can be removed. The new codes look like this: 
+leg_a = float(input(“Input first leg length:”)) 
+leg_b = float(input(“Input second leg length:”)) 
+
+print(“Hypotenuse length is”, (leg_a**2 + leg_b**2) **0.5) 
+
+
 # Chapter Three
 # Read two numbers and identify the larger of two numbers
 number1 = int(input("Enter the first number: "))
@@ -45,6 +69,19 @@ else: larger_number = number2
 
 # Print the result
 print("The larger number is:", larger_number)
+
+# Read three numbers.
+number1 = int(input("Enter the first number: "))
+number2 = int(input("Enter the second number: "))
+number3 = int(input("Enter the third number: "))
+
+# Check which one of the numbers is the greatest
+# and pass it to the largest_number variable.
+
+largest_number = max(number1, number2, number3)
+
+# Print the result.
+print("The largest number is:", largest_number)
 
 # Read three numbers
 number1 = int(input("Enter the first number: "))
@@ -197,11 +234,17 @@ while counter:
     counter -= 1
 print("Outside the loop.", counter)
 
-#FOR loops
+#FOR loops is designed to do more complicated tasks. It can browse large collections
+# data item by item
+
+# for i in range(100)
+    # do_something()
+    pass # is an empty instruction as for, if, elif, else and while require at
+         # least one instruction
 
 for i in range(10):
     print("The value of i is currently", i)
-
+    
 for i in range(2, 8):
     print("The value of i is currently", i)
 
@@ -214,21 +257,27 @@ for expo in range(16):
 # break - example
 
 print("The break instruction:")
+
 for i in range(1, 6):
     if i == 3:
         break
     print("Inside the loop.", i)
 print("Outside the loop.")
 
+# The output will be
+# Inside the loop. 1
+# Inside the loop. 2
+# Outside the loop. 3
 
 # continue - example
 
 print("\nThe continue instruction:")
-for i in range(1, 6):
-    if i == 3:
-        continue
-    print("Inside the loop.", i)
-print("Outside the loop.")
+for i in range(1, 6):                   #Inside the loop. 1
+    if i == 3:                          #Inside the loop. 2
+        continue                        #Inside the loop. 3
+    print("Inside the loop.", i)        #Inside the loop. 4
+print("Outside the loop.")              #Outside the loop.
+
 
 # The break and continue statements
 
@@ -254,12 +303,50 @@ for i in range(0, 11):
     if i % 2 != 0:
         print(i)
 
+# For loop that counts word in 'Python' and lists them separated by *
+word = "Python"
+for letter in word:
+    print(letter, end="*") # if only used print(letter), all letters will be printed on single line
+
+# For loop that will read text and break when finds appropriate letter
+text = "OpenEDG Python Institute"
+for letter in text:
+    if letter == "P":
+        break
+    print(letter, end="") # Output will be OpenEDG
+
+# While loop
+n = 0
+                                    # The output will be
+while n != 3:                       #0
+    print(n)                        #1
+    n += 1                          #2
+else:                               #3 else
+    print(n, "else")                
+
+print()
+
+# For loop
+for i in range(0, 3):               # The output will be
+    print(i)                        # 0
+else:                               # 1
+    print(i, "else")                # 2
+                                    # 2 else
+
 #while loop that counts from 0 to 10 and prints odd numbers
 x = 1
 while x < 11:
     if x % 2 != 0:
         print(x)
     x += 1
+
+# For loop and if require total sum of the output
+sum = 0 # have to define the sum variable at the start of the loop
+for i in range(1, 10):
+    if i % 2 == 0:
+        sum = sum + i
+        print(sum) # print total sum for each iteration
+print(sum) # will display a single total when the iteration completes.
 
 # for and break statement that stops at @ character and displays word before it
 
@@ -351,14 +438,15 @@ print(len(numbers))
 print(numbers)
 
 ###
-
+# Adding items to the list using append method
+# This will add new item at the end
 numbers.append(4)
 
 print(len(numbers))
 print(numbers)
 
 ###
-
+# Insert method will insert value as specified (location, value)
 numbers.insert(0, 222)
 print(len(numbers))
 print(numbers)
@@ -370,7 +458,7 @@ my_list = []  # Creating an empty list.
 for i in range(5):
     my_list.append(i + 1)
 
-print(my_list)
+print(my_list) # The output will be [1,2,3,4,5]
 
 # List methods using for loop and insert method
 # Using insert will list number in opposite direction to append
@@ -380,7 +468,7 @@ my_list = []  # Creating an empty list.
 for i in range(5):
     my_list.insert(0, i + 1)
 
-print(my_list)
+print(my_list) # The output will be [5,4,3,2,1]
 
 
 # Calculating the total values of the list
@@ -392,6 +480,19 @@ for i in my_list:
     total = total +i
 
 print(total)
+
+# To calculate the total values of items in list
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total) # The output will be 27
+
+# Using sort and reverse method
+my_list.sort() in ascending order
+my_list.reverse() - to reverse the order
 
 # Reversing values using for loop
 
